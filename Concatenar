@@ -1,6 +1,7 @@
 package Ejercicios_Traductores;
 import java.io.IOException;
 import java.util.Scanner;
+
 /**
  *
  * @author rgonzalez
@@ -15,7 +16,7 @@ public class Concatenar {
                     break;
                 // Romper al final de linea                       
                 }
-                while (Leer.hasNext()) {  
+                while (Leer.hasNextLine()) {  
                 // Introducir operacion
                     texto += Leer.nextLine();
                 }
