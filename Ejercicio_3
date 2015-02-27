@@ -1,0 +1,43 @@
+package ejercicio_3;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Raga
+ */
+public class Ejercicio_3 {
+
+    public static void main(String[] args) {
+        Scanner read = new Scanner(System.in);
+        int resp = 0, io = 0;
+        double prom = 0;
+        int[] array = new int[15];
+        while (true) {
+            System.out.println(">>>>BIENVENIDO A UAT CUTM<<<<");
+            System.out.println("Eija   1) ENTRADA   2) SALIDA  3)Obtener estadisticos");
+            if (resp == 3) {
+                for (int j = 0; j < array.length; j++) {
+                    prom = prom + array[j];
+                }
+                System.out.println("En promedio han entrado: " + (prom / 15) + " vehiculos al CUTM\n");
+            } else {
+                io = read.nextInt();
+                System.out.println("¿DE QUE UBICACION?:");
+                System.out.println(" 1)FIANS       4)UACJS      7)FADU         10)ODONTOLOGIA  13)MEDICINA");
+                System.out.println(" 2)ENFERMERIA  5)FCAT       8)MUSICA       11)CELLAP       14)CELEX");
+                System.out.println(" 3)E. ADMVO.   6)A. MAGNA   9)BIBLIOTECA   12)GUARDERIA    15)GIMNASIO");
+                resp = read.nextInt();
+                if (resp > 0 && resp <= 15 && io == 1) {
+                    array[resp - 1] = array[resp - 1] + 1;
+                }
+                if (resp > 0 && resp <= 15 && io == 2) {
+                    array[resp - 1] = array[resp - 1] - 1;
+                }
+                if (resp < 0 && resp > 15) {
+                    System.out.println("Opcion invalida!!");
+                }
+            }
+        }
+    }
+}
